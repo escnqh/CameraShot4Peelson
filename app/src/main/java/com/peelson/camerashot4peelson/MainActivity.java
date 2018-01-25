@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         mCameraShotView = findViewById(R.id.jcv_shot);
+
         mCameraShotView.setVisibility(CameraBridgeViewBase.VISIBLE);
         mCameraShotView.setCvCameraViewListener(this);
         mCameraShotView.setClickable(true);
@@ -105,11 +106,13 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     @Override
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
+        Log.i(TAG+"__","FLAG");
         mRgba = inputFrame.rgba();
         mGray = inputFrame.gray();
+        FLAG++;
         if (FLAG == 1) {
             Mat mBgr = new Mat();
-            FLAG++;
+
             final long currentTimeMillis = System.currentTimeMillis();
             final String appName = getString(R.string.app_name);
             final String galleryPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString();

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context="com.peelson.camerashot4peelson.MainActivity">
     <org.opencv.android.JavaCameraView
         android:id="@+id/jcv_shot"
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center"
         android:layout_weight="5"
         android:background="@color/black"
@@ -21,8 +21,8 @@
         <at.markushi.ui.CircleButton
             android:id="@+id/cbtn_save"
             android:padding="15dp"
-            android:layout_marginRight="70dp"
-            android:visibility="gone"
+            android:layout_marginBottom="70dp"
+            android:visibility="visible"
             android:src="@drawable/ic_check_black_18dp"
             app:cb_color="@color/white"
             android:layout_width="80dp"
@@ -30,7 +30,7 @@
         <at.markushi.ui.CircleButton
             android:id="@+id/cbtn_start"
             android:padding="15dp"
-            android:visibility="visible"
+            android:visibility="gone"
             android:src="@drawable/ic_play_arrow_black_18dp"
             android:layout_margin="5dp"
             app:cb_color="@color/white"
@@ -44,7 +44,7 @@
             android:layout_margin="5dp"
             android:padding="15dp"
             android:src="@drawable/ic_close_black_18dp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:cb_color="@color/white" />
     </LinearLayout>
 
